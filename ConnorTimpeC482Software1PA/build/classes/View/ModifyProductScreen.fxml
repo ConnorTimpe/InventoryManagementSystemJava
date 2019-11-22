@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="477.0" prefWidth="691.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutX="21.0" layoutY="99.0" prefHeight="239.0" prefWidth="326.0">
+         <children>
+            <VBox prefHeight="239.0" prefWidth="168.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="514.0">
+                     <children>
+                        <Label text="ID" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="514.0">
+                     <children>
+                        <Label text="Name" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="514.0">
+                     <children>
+                        <Label text="Inv" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="168.0">
+                     <children>
+                        <Label text="Price" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="168.0">
+                     <children>
+                        <Label text="Max" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="239.0" prefWidth="271.0" AnchorPane.leftAnchor="60.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="514.0">
+                     <children>
+                        <TextField fx:id="ProductIdTxt" promptText="Id">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="514.0">
+                     <children>
+                        <TextField fx:id="ProductNameTxt" promptText="Part Name">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="514.0">
+                     <children>
+                        <TextField fx:id="ProductInvTxt" prefWidth="60.0" promptText="Inv">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="514.0">
+                     <children>
+                        <TextField fx:id="ProductPriceTxt" prefWidth="60.0" promptText="Price">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="514.0">
+                     <children>
+                        <TextField fx:id="ProductMaxTxt" prefHeight="25.0" prefWidth="60.0" promptText="Max">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                        </TextField>
+                        <Label text="Min">
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="ProductMinTxt" prefHeight="25.0" prefWidth="60.0" promptText="Min">
+                           <font>
+                              <Font name="System Italic" size="12.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="15.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <Label layoutX="39.0" layoutY="35.0" prefHeight="42.0" prefWidth="148.0" text="Modify Product" textFill="#210f61">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TableView fx:id="AvailablePartTableView" layoutX="288.0" layoutY="99.0" prefHeight="111.0" prefWidth="379.0">
+            <columns>
+                <TableColumn fx:id="PartIdCol" prefWidth="73.0" text="Part ID" >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="id" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="PartNameCol" prefWidth="83.0" text="Part Name" >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="name" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="PartInvLvlCol" prefWidth="100.0" text="Inventory Level" >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="stock" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="PartPriceCol" prefWidth="123.0" text="Price per Unit" >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="price" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+      </TableView>
+      <TableView fx:id="AssociatedPartTableView" layoutX="288.0" layoutY="256.0" prefHeight="111.0" prefWidth="379.0">
+            <columns>
+                <TableColumn fx:id="ModifyPartIdCol" prefWidth="73.0" text="Part ID" >
+                    <cellValueFactory>
+                        <PropertyValueFactory property="id" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="ModifyPartNameCol" prefWidth="83.0" text="Part Name">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="name" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="ModifyPartInvLvlCol" prefWidth="100.0" text="Inventory Level">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="stock" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="ModifyPartPriceCol" prefWidth="123.0" text="Price per Unit">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="price" />
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+      </TableView>
+      <Button layoutX="573.0" layoutY="219.0" mnemonicParsing="false" onAction="#OnActionAddAssociatedPart" prefWidth="60.0" text="Add" />
+      <Button layoutX="573.0" layoutY="381.0" mnemonicParsing="false" onAction="#OnActionDeleteAssociatedPart" prefWidth="60.0" text="Delete" />
+      <Button layoutX="500.0" layoutY="424.0" mnemonicParsing="false" onAction="#OnActionSaveProduct" prefWidth="60.0" text="Save" />
+      <Button layoutX="573.0" layoutY="424.0" mnemonicParsing="false" onAction="#OnActionReturnToMainMenu" prefWidth="60.0" text="Cancel" />
+      <Button layoutX="375.0" layoutY="52.0" mnemonicParsing="false" onAction="#OnActionSearchAssociatedParts" prefWidth="60.0" text="Search" />
+      <TextField fx:id="ProductSearchTxt" layoutX="446.0" layoutY="52.0" />
+   </children>
+</AnchorPane>
